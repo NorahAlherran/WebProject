@@ -1,0 +1,38 @@
+
+
+.course-containerCC {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: #fff;
+    padding: 10px;
+	
+}
+
+.courseCC {
+	 
+    width: 200px;
+    padding: 20px;
+    margin: 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    text-align: center;
+	  background-color: #FFFFF0;
+}
+
+.course-info {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 10px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+
+.courseCC:hover .course-info {
+    display: block;
+}
+
+
