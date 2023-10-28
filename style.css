@@ -228,7 +228,7 @@ footer a {
 
 .nav a{
 	color:black;
-	
+	text-decoration: underline;
 }
 header, aside {
     background-color: #f5f5dc;
