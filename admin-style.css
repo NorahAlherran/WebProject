@@ -1,0 +1,17 @@
+div.admin-container, div.tutors-container, div.coursesAdmin-container
+{
+    background-color: #FFF;
+  width: 200px;
+  height: 400px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  text-align: center;
+  padding: 20px;
+  margin: 20px;
+  justify-content: center; 
+  margin: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #FFFFF0;
+
+}
