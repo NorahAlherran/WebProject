@@ -1,0 +1,28 @@
+.Tuters {
+  width: 75%;
+  height: 200%;
+  overflow:auto;
+  white-space: nowrap;
+  border: 3% solid black;
+    margin-left: 1;
+    margin-top:20%;
+    justify-content: center;
+    display:inline-block;
+    justify-content: center;
+    background-color: #fff;
+    padding: 0%;
+    background-position: 100%;
+}
+
+.T {
+  display: inline-block;
+  width: 35%; /* Optional: Set a specific width for the items */
+  height: 200%;
+  background-color:#FFFFF0; 
+  margin: 1%;
+  text-align: center;
+  line-height: 350%;
+
+  
+}
+
