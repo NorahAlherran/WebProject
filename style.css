@@ -1,7 +1,7 @@
 
 #logo img{	
-	width=200px;
-	height=auto;
+	width:200px;
+	height:auto;
 }
 #website-name h1{
 	font-size:24px;
@@ -21,6 +21,28 @@ body {
     font-family: Arial, sans-serif;
 	  background-color: #f5f5dc;
 	  
+}
+ul.breadcrumb {
+  padding: 10px 16px;
+  list-style: none;
+  background-color:white;
+}
+ul.breadcrumb li {
+  display: inline;
+  font-size: 18px;
+}
+ul.breadcrumb li+li:before {
+  padding: 8px;
+  color: black;
+  content: "/\00a0";
+}
+ul.breadcrumb li a {
+  color: #0275d8;
+  text-decoration: none;
+}
+ul.breadcrumb li a:hover {
+  color: #01447e;
+  text-decoration: underline;
 }
 
 header {
@@ -43,14 +65,7 @@ header h5 {
     right: 10px; 
 }
 
-nav a {
-    text-decoration: none;
-    color: #3498db;
-    margin: 10px;
-    font-weight: bold;
-	
-	
-}
+
 
 .course-container {
     display: flex;
@@ -121,7 +136,8 @@ footer {
     color:black;
     text-align: center;
     padding: 10px;
-	
+	position:static;
+	margin-top:10%;
 }
 
 
@@ -129,6 +145,8 @@ footer a {
     color:blue;
     text-decoration: none;
     font-weight: bold;
+	position:static;
+	margin-top:70%;
 }
 
 .nav-list {
@@ -173,7 +191,6 @@ footer a {
 	border-radius:var(--radius);
 	display:flex;
 	justify-content:flex-end;
-	align-items:right;
 	flex-direction: column;
 	margin-left:2rem;
 	
@@ -228,61 +245,9 @@ footer a {
 
 .nav a{
 	color:black;
-	text-decoration: underline;
+	
 }
 header, aside {
     background-color: #f5f5dc;
 }
 
-.container {
-    background-color: white;
-    padding: 20px;
-}
-
-.kids {
-    background-color: #f0f0f0; 
-    overflow-y: scroll; 
-}
-
-.list {
-    padding: 0;
-    list-style: none;
-}
-
-.list li {
-    padding: 10px;
-    border-bottom: 1px solid #ddd; 
-    white-space: nowrap; 
-}
-
-
-h2 {
-    margin: 10px;
-    text-align: center; 
-}
-button {
-    background-color: #007BFF;
-    color: #fff;
-    border: none;
-    padding: 1.5rem;
-    border-radius: 7rem;
-    cursor: pointer;
-    margin: 4rem;
-    transition: background-color 0.3s ease; 
-}
-
-.button1 {
-    background-color:#8A9A5B; 
-}
-
-.button2 {
-    background-color:#8A9A5B; 
-}
-
-.button3 {
-    background-color:#8A9A5B; 
-}
-
-button:hover {
-    background-color: #355E3B; 
-}
