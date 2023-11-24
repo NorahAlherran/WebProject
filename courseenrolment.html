@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Course Enrolment</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="courseenrolment.css">
+</head>
+<body>
+    <header>
+        <div id="logo">
+            <img src="images/logo.png" alt="logo" height="120" width="120">
+        </div>
+        <div id="website-name">
+            <h1>Coding Safari</h1>
+        </div>
+        <h5><q>Empowering young minds <br>through coding adventures</q></h5>
+        <ul class="breadcrumb">
+            <li><a href="Index.html">Home</a></li>
+            <li><a href="ParentDashboard.html">Parent Dashboard</a></li>
+            <li><a href="courseenrolment.html">Course Enrollment</a></li>
+
+          </ul>
+    </header>
+    <aside>
+        <nav>
+            <ul class="nav-list">
+            <li class="nav-item1"><a href="courses.html" accesskey="c">Current Courses</a></li>
+            <li class="nav-item2"><a href="tutors.html" accesskey="t">Tutors</a></li>
+            <li class="nav-item3"><a href="ParentDashboard.html" accesskey="p">Parent Dashboard</a></li>
+            <li class="nav-item4"><a href="administrators.html" accesskey="a">Administrators Dashboard</a></li>
+            </ul>
+            </nav>
+    </aside>
+    <main>
+        <div class="form-container">
+            <div class="form-box">
+                <label for="kid-names">Choose your kid's name:</label>
+                <select name="kid-names" id="kid-names">
+                    <option value="Abdulrhman">Abdulrhman</option>
+                    <option value="Hussah">Hussah</option>
+                    <option value="Reema">Reema</option>
+                    <option value="Saad">Saad</option>
+                    <option value="Sara">Sara</option>
+                </select>
+            </div>
+
+            <div class="form-box">
+                <h3>Select Your Courses</h3> <img src="images/filter.png" alt="filter" id="filter">
+
+                <form>
+                    <div class="course-div">
+                        <img class="course-image" src="images/java.jpg" alt="Java">
+                        <div class="course-details">
+                            <label for="course1">
+                                <input type="checkbox" id="course1" name="courses[]" value="Course 1"> Java
+                            </label>
+                        </div>
+                    </div>
+                    <div class="course-div">
+                        <img class="course-image" src="images/HTML.jpg" alt="HTML">
+                        <div class="course-details">
+                            <label for="course2">
+                                <input type="checkbox" id="course2" name="courses[]" value="Course 2"> HTML
+                            </label>
+                        </div>
+                    </div>
+  <div class="course-div">
+                        <img class="course-image" src="images/python.jpg" alt="python">
+                        <div class="course-details">
+                            <label for="course3">
+                                <input type="checkbox" id="course3" name="courses[]" value="Course 3"> Python
+                            </label>
+                        </div>
+                    </div>
+  <div class="course-div">
+                        <img class="course-image" src="images/SQL.jpg" alt="SQL">
+                        <div class="course-details">
+                            <label for="course4">
+                                <input type="checkbox" id="course4" name="courses[]" value="Course 4"> SQL
+                            </label>
+                        </div>
+                    </div>
+  <div class="course-div">
+                        <img class="course-image" src="images/C++.jpg" alt="C++">
+                        <div class="course-details">
+                            <label for="course5">
+                                <input type="checkbox" id="course5" name="courses[]" value="Course 5"> C++
+                            </label>
+                        </div>
+                    </div>
+  <div class="course-div">
+                        <img class="course-image" src="images/R.jpg" alt="R">
+                        <div class="course-details">
+                            <label for="course6">
+                                <input type="checkbox" id="course6" name="courses[]" value="Course 6"> R
+                            </label>
+                        </div>
+                    </div>					
+                </form>
+                <input type="submit" value="Submit">
+            </div>
+
+            <div class="form-box">
+                <label for="filterByTutor">Filter by Tutor:</label>
+                <select id="filterByTutor">
+                    <optgroup label="Tutor 1">
+                        <option value="Dana">T.Dana</option>
+                     
+                    </optgroup>
+                    <optgroup label="Tutor 2">
+                        <option value="Mona">T.Mona</option>
+                    </optgroup>
+                    <optgroup label="Tutor 3">
+                        <option value="Sarah">T.Sarah</option>
+                    </optgroup>
+                </select>
+                <label for="filterByPrerequisite">Filter by Prerequisite Course:</label>
+                <select id="filterByPrerequisite">
+                    <optgroup label="Course 1">
+                        <option value="Java">Java</option>
+                    </optgroup>
+                    <optgroup label="Course 2">
+                        <option value="Python">Python</option>
+                    </optgroup>
+                    <optgroup label="Course 3">
+                        <option value="HTML">HTML</option>
+                    </optgroup>
+                    <optgroup label="Course 4">
+                        <option value="SQL">SQL</option>
+                    </optgroup>
+                    <optgroup label="Course 5">
+                        <option value="C++">C++</option>
+                    </optgroup>
+                    <optgroup label="Course 6">
+                        <option value="R">R</option>
+                    </optgroup>
+                </select>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <h3>Contact us </h3>
+        <p>Email: <a href="mailto:CodingSafari@gmail.com">CodingSafari@gmail.com</a></p>
+        <p>Phone: 0553892789</p>
+        <p>&copy; 2023 CodingSafari, all rights reserved.</p>
+    </footer>
+</body>

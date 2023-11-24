@@ -1,0 +1,47 @@
+.container {
+    background-color: white;
+    padding: 20px;
+margin-top: 5%;}
+
+.kids {
+    background-color: #f0f0f0; 
+    overflow-y: scroll; 
+}
+
+.list {
+    padding: 0;
+    list-style: none;
+}
+
+.list li {
+    padding: 1em;
+    border-bottom: 1px solid #ddd; 
+    white-space: nowrap; 
+}
+
+
+h2 {
+    margin: 10px;
+    text-align: center; 
+}
+.button-row {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+margin-top:10%;	
+}
+
+.styled-button {
+    padding: 10px 20px;
+    background-color: #8A9A5B;
+    color: #fff;
+    border: none;
+border-radius: 12px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+	font-size:100%;
+}
+
+.styled-button:hover {
+    background-color: #355E3B;
+}
