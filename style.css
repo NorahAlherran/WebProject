@@ -250,3 +250,45 @@ footer a {
 header, aside {
     background-color: #f5f5dc;
 }
+/* Media Queries for Responsive Design */
+@media only screen and (min-width: 768px) {
+
+    .course {
+        width: 45%;
+    }
+
+    .feedback {
+        width: 45%; 
+    }
+    
+    .scrollable-div  {
+        width: 45%; 
+    }
+     .nav-list  {
+      font-size:60%;
+    }
+    
+}
+
+    
+
+
+@media only screen and (min-width: 480px) {
+     .course {
+        width: 45%; 
+    }
+
+    .feedback {
+        width: 60%; 
+    }
+    
+    .scrollable-div  {
+        width: 50%; 
+    }
+    
+        .nav-list  {
+      font-size:40%;
+    }
+    
+   
+}
