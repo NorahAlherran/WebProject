@@ -5,7 +5,9 @@
     <title>Course Enrolment</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="courseenrolment.css">
+
 </head>
+
 <body>
     <header>
         <div id="logo">
@@ -46,7 +48,14 @@
             </div>
 
             <div class="form-box">
-                <h3>Select Your Courses</h3> <img src="images/filter.png" alt="filter" id="filter">
+                <h3>Select Your Courses</h3>    <label for="tutor-filter">Filter by tutor:</label>
+                <select id="tutor-filter" onchange="filterCoursesByTutor()">
+                    
+                </select>
+                <label for="prerequisite-filter">Filter by prerequisites:</label>
+                <select id="prerequisite-filter" onchange="filterCoursesByPrerequisite()">               
+                   
+                </select>
 
                 <form>
                     <div class="course-div">
@@ -96,47 +105,36 @@
                                 <input type="checkbox" id="course6" name="courses[]" value="Course 6"> R
                             </label>
                         </div>
+                        </div>
+                        <div class="course-div">
+                            <img class="course-image" src="images/8.png" alt="scratch">
+                            <div class="course-details">
+                                <label for="course7">
+                                    <input type="checkbox" id="course7" name="courses[]" value="Course 7"> scratch
+                                </label>
+                            </div>
+                        </div>
+                            <div class="course-div">
+                                <img class="course-image" src="images/3.png" alt="javascript">
+                                <div class="course-details">
+                                    <label for="course8">
+                                        <input type="checkbox" id="course8" name="courses[]" value="Course 8"> javascript
+                                    </label>
+                                </div>
+                            </div>
+                                <div class="course-div">
+                                    <img class="course-image" src="images/6.png" alt="css">
+                                    <div class="course-details">
+                                        <label for="course9">
+                                            <input type="checkbox" id="course9" name="courses[]" value="Course 9"> css
+                                        </label>
+                                    </div>
                     </div>					
                 </form>
                 <input type="submit" value="Submit">
             </div>
 
-            <div class="form-box">
-                <label for="filterByTutor">Filter by Tutor:</label>
-                <select id="filterByTutor">
-                    <optgroup label="Tutor 1">
-                        <option value="Dana">T.Dana</option>
-                     
-                    </optgroup>
-                    <optgroup label="Tutor 2">
-                        <option value="Mona">T.Mona</option>
-                    </optgroup>
-                    <optgroup label="Tutor 3">
-                        <option value="Sarah">T.Sarah</option>
-                    </optgroup>
-                </select>
-                <label for="filterByPrerequisite">Filter by Prerequisite Course:</label>
-                <select id="filterByPrerequisite">
-                    <optgroup label="Course 1">
-                        <option value="Java">Java</option>
-                    </optgroup>
-                    <optgroup label="Course 2">
-                        <option value="Python">Python</option>
-                    </optgroup>
-                    <optgroup label="Course 3">
-                        <option value="HTML">HTML</option>
-                    </optgroup>
-                    <optgroup label="Course 4">
-                        <option value="SQL">SQL</option>
-                    </optgroup>
-                    <optgroup label="Course 5">
-                        <option value="C++">C++</option>
-                    </optgroup>
-                    <optgroup label="Course 6">
-                        <option value="R">R</option>
-                    </optgroup>
-                </select>
-            </div>
+            
         </div>
     </main>
 
@@ -146,4 +144,140 @@
         <p>Phone: 0553892789</p>
         <p>&copy; 2023 CodingSafari, all rights reserved.</p>
     </footer>
+    <script>
+        const courses = [
+            {
+                courseName: "Java",
+                tutor: "T.Sarah Mohammad",
+                prerequisites: ["Python"],
+            },
+            {
+                courseName: "HTML",
+                tutor: "T.Mona Kareem",
+                prerequisites: ["c++"],
+            },
+            {
+                courseName: "Python",
+                tutor: "T.Sarah Mohammad",
+                prerequisites: [],
+            },
+            {
+                courseName: "SQL",
+                tutor: "T.Mona Kareem",
+                prerequisites: ["HTML"],
+            },
+            {
+                courseName: "C++",
+                tutor: "T.Dana Ahmad",
+                prerequisites: ["Java"],
+            },
+            {
+                courseName: "R",
+                tutor: "T.Dana Ahmad",
+                prerequisites: [],
+            },
+            {
+                courseName: "JavaScript",
+                tutor: "T.Mona Kareem",
+                prerequisites: ["HTML"],
+            },
+            {
+                courseName: "CSS",
+                tutor: "T.Mona Kareem",
+                prerequisites: ["HTML"],
+            },
+            {
+                courseName: "Scratch",
+                tutor: "T.Dana Ahmad",
+                prerequisites: [],
+            },
+        ];
+    
+        // load children's data from localStorage
+        let savedChildren = window.localStorage.getItem("childrensObj");
+    
+        if (savedChildren != null) {
+            var childs = JSON.parse(savedChildren);
+            var kidsFilter = document.getElementById('kid-names');
+            var numberOfObjects = Object.keys(childs).length;
+            for (var i = 1; i <= numberOfObjects; i++) {
+                var option = document.createElement('option');
+                option.text = childs[i].name;
+                kidsFilter.add(option);
+            }
+        }
+    
+        // Function to fill filter options
+        function fillFilterOptions() {
+            var tutorFilter = document.getElementById('tutor-filter');
+            var prerequisiteFilter = document.getElementById('prerequisite-filter');
+    
+            var tutors = [];
+            var prerequisites = [];
+    
+            // Loop through the courses array to get unique tutors and prerequisites
+            courses.forEach(function (course) {
+                if (!tutors.includes(course.tutor)) {
+                    tutors.push(course.tutor);
+                    var option = document.createElement('option');
+                    option.text = course.tutor;
+                    tutorFilter.add(option);
+                }
+    
+                course.prerequisites.forEach(function (prerequisite) {
+                    if (!prerequisites.includes(prerequisite)) {
+                        prerequisites.push(prerequisite);
+                        var option = document.createElement('option');
+                        option.text = prerequisite;
+                        prerequisiteFilter.add(option);
+                    }
+                });
+            });
+        }
+    
+        function filterCoursesByTutor() {
+            var tutorFilter = document.getElementById('tutor-filter');
+            var selectedTutor = tutorFilter.value;
+    
+            var filteredCourses = courses.filter(function (course) {
+                return selectedTutor === '' || course.tutor === selectedTutor;
+            });
+    
+            displayFilteredCourses(filteredCourses);
+        }
+    
+        function filterCoursesByPrerequisite() {
+            var prerequisiteFilter = document.getElementById('prerequisite-filter');
+            var selectedPrerequisite = prerequisiteFilter.value;
+    
+            var filteredCourses = courses.filter(function (course) {
+                return selectedPrerequisite === '' || course.prerequisites.includes(selectedPrerequisite);
+            });
+    
+            displayFilteredCourses(filteredCourses);
+        }
+    
+        function displayFilteredCourses(filteredCourses) {
+            var courseList = document.getElementById('coursesList');
+            courseList.innerHTML = '';
+    
+            filteredCourses.forEach(function (course) {
+                courseList.innerHTML += '<div class="course-div">' +
+                    '<img class="course-image" src="images/' + course.courseName.toLowerCase() + '.jpg" alt="' + course.courseName + '">' +
+                    '<div class="course-details">' +
+                    '<label for="course">' +
+                    '<input type="checkbox" id="course" name="courses[]" value="' + course.courseName + '"> ' +
+                    course.courseName +
+                    '</label>' +
+                    '</div>' +
+                    '</div>';
+            });
+        }
+    
+        window.onload = function () {
+            fillFilterOptions();
+        };
+    </script>
+    
+    
 </body>
