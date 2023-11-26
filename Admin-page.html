@@ -1,13 +1,31 @@
 <!DOCTYPE html>
 <html>
 <head>
+
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Administrators Dashboard</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="admin-style.css">
+  <link rel="stylesheet" href="admin-style.css"> 
+<link rel="stylesheet" media="(prefers-color-scheme: dark)" href="syle/dark.css">
+	
+	<style>
+	  h2 {
+      text-align: center;
+    }
+    
+ a:link { color:#101643; text-decoration: underline; }
+ a:visited { color:#101643; text-decoration: underline; }
+ a:hover { color:#101643; text-decoration: underline; }
+ a:active { color:#101643; text-decoration: underline; }
 
+ 
+    </style>
+    
 </head>
+
 <body>
+
     <header>
         <div  id="logo">
             <img src="images/logo.png" alt="logo" height="120" width="120">
@@ -17,23 +35,28 @@
 		</div>
 		
         <h5><q>Empowering young minds <br>through coding adventures</q></h5>
-        <nav class="nav">
-            <a href="index.html">Home Page &gt </a>
-            <a href="Admin.html">Administrator Page</a>
-        </nav>
+		<ul class="breadcrumb">
+           <li> <a href="index.html">Home Page &gt </a>   </li>
+           <li> <a href="Admin.html">Administrator Page</a>   </li>
+	    </ul>
+ <button id="theme-toggle">Customize</button>
+	        <script src="script.js"></script>
+
     </header>
+    
     <aside>
         <nav>
 	<ul class="nav-list">
-	<li class="nav-item1"><a href="">Current Courses</a></li>
-	<li class="nav-item2"><a href="">Tutors</a></li>
+	<li class="nav-item1"><a href="CurrentCourses.html">Current Courses</a></li>
+	<li class="nav-item2"><a href="tutors.html">Tutors</a></li>
 	<li class="nav-item3"><a href="">Parent Dashboard</a></li>
 	<li class="nav-item4"><a href="">Administrators Dashboard</a></li>
 	</ul>
 	</nav>
     </aside>
-    <main>
     
+    <main>
+    <h2 id="currentWeekStartDate"></h2>
 <div class="course-container"> 
             <div class="admin-container">
                 <h3><img src="images/student.webp" alt="student" height="50" width="50"> regesterd kids</h3>
@@ -62,56 +85,139 @@
                 	
                </ul>
             </div>
+            
 			  <div class="coursesAdmin-container">
                 <h3><img src="images/books.png" alt="books" height="50" width="50"> Courses</h3>
                 <br>
                 <ul>
                 
-                	<li> Java programming, T.Sarah Mohammad
-                <ul> 
-                	<li> Nora Ahmad </li>
-                	<li> Sarah Omar </li>
-                	<li> Reema Omar </li>  
-                </ul>              	
-                	</li>
-                	<li> HTML Programming, T.Mona Kareem
-                	<ul> 
-                	<li> Nora Khalid </li>
-                	<li> Sarah Ahmad </li>
-                	<li> Reema Omar </li>
-                	<li> Maha Salem </li>
-                	<li> Deema Bader </li>
-                	<li> <a href="studant-names.html"> More </a></li>
-                	</ul>
-                	</li>
-                	<li> C++ Programming,  T.Dana Ahmad
-                <ul> 
-                	<li> Sarah Khalid </li>
-                	<li> Norah Ahmad </li>
-                	<li> Razan Omar </li>  
-                </ul>              	
-                	</li>
-                	<li> R Programming,  T.Dana Ahmad
-                <ul> 
-                	<li> Lama Khalid </li>
-                	<li> Noor Ahmad </li>
-                	<li> Leen Omar </li>  
-                </ul>              	
-                	</li>
-                	<li> SQL Programming, T.Mona Kareem
-                <ul> 
-                	<li> Leena Khalid </li>
-                	<li> Mariyah Ahmad </li>
-                	<li> Sadan Omar </li>  
-                </ul>              	
-                	</li>
-                	<li> Python programming, T.Sarah Mohammad
-                <ul> 
-                	<li> Reem Khalid </li>
-                	<li> Deem Ahmad </li>
-                	<li> Reema Omar </li>  
-                </ul>              	
-                	</li>
+ 				<div class="read-more-container">
+ 				
+					<h4>Java programming </h4>
+        				<div class="container">
+       						 <ul>
+							    <li> Nora Ahmad </li>
+                				<li> Sarah Omar </li>
+                				<li> Reema Omar </li>  
+                            	<li>Maha Salem</li>
+                            	<li>Deema Bader</li>
+                	<span class="read-more-text">
+              		  <ul>
+                            <li>Lana Hasan</li> <!-- Additional names -->
+                            <li>Yara Mohammed</li> <!-- Additional names -->
+                            <li>Shahad Hasan</li> <!-- Additional names -->
+                            <li>Maysoon Hasan</li> <!-- Additional names -->
+                            <li>Maha Abulillah</li> <!-- Additional names -->
+                           
+               		 </ul>
+              	  </span>
+           </ul>
+            <span class="read-more-btn"> More</span>
+        </div>
+
+					<h4>HTML programming </h4>
+        				<div class="container">
+       						 <ul>
+                            	<li>Nora Khalid</li>
+                            	<li>Sarah Ahmad</li>
+                            	<li>Reema Omar</li>
+                            	<li>Maha Salem</li>
+                            	<li>Deema Bader</li>
+                	<span class="read-more-text">
+              		  <ul>
+                            <li>Leen Yousuf</li> <!-- Additional names -->
+                            <li>Mariyah Yousuf</li> <!-- Additional names -->
+                            <li>Maram Khalid</li> <!-- Additional names -->
+                            <li>Amjad Khalid</li> <!-- Additional names -->
+                            <li>Sara Fuaad</li> <!-- Additional names -->                            
+               		 </ul>
+              	  </span>
+           </ul>
+            <span class="read-more-btn"> More</span>
+        </div>
+					<h4>C++ programming </h4>
+        				<div class="container">
+       						 <ul>
+                            	<li>Nora Khalid</li>
+                            	<li>Sarah Ahmad</li>
+             				   	<li> Sarah Khalid </li>
+                				<li> Norah Ahmad </li>
+                				<li> Razan Omar </li>  
+                	<span class="read-more-text">
+              		  <ul>
+                            <li>Danah Yousuf</li> <!-- Additional names -->
+                            <li>Rawan Fuaad</li> <!-- Additional names -->
+                            <li>Lara Khalid</li> <!-- Additional names -->
+                            <li>Budoor Khalid</li> <!-- Additional names -->                            
+               		 </ul>
+              	  </span>
+           </ul>
+            <span class="read-more-btn"> More</span>
+        </div>
+					<h4>R programming </h4>
+        				<div class="container">
+       						 <ul>
+                            	<li>Nora Khalid</li>
+                				<li> Lama Khalid </li>
+                				<li> Noor Ahmad </li>
+                				<li> Leen Omar </li>  
+                            	<li>Deema Bader</li>
+                	<span class="read-more-text">
+              		  <ul>
+                            <li>Raghad Fuaad</li> <!-- Additional names -->
+                            <li>Tahani Khalid</li> <!-- Additional names -->
+                            <li>Nada Nader</li> <!-- Additional names -->
+                            <li>Munirah Khalid</li> <!-- Additional names -->
+               		 </ul>
+              	  </span>
+           </ul>
+            <span class="read-more-btn"> More</span>
+        </div>
+
+					<h4>SQL programming </h4>
+        				<div class="container">
+       						 <ul>
+                				<li> Leena Khalid </li>
+                				<li> Mariyah Ahmad </li>
+                				<li> Sadan Omar </li>  
+                            	<li>Maha Salem</li>
+                            	<li>Deema Bader</li>
+                	<span class="read-more-text">
+              		  <ul>
+                            <li>Huda Ali</li> <!-- Additional names -->
+                            <li>Yara Mohammed</li> <!-- Additional names -->
+                            <li>Layan Nader</li> <!-- Additional names -->
+                            <li>Lana Ahmad</li> <!-- Additional names -->
+               		 </ul>
+              	  </span>
+           </ul>
+            <span class="read-more-btn"> More</span>
+        </div>
+
+					<h4>Python programming </h4>
+        				<div class="container">
+       						 <ul>
+                            	<li>Nora Khalid</li>
+                				<li> Reem Khalid </li>
+                				<li> Deem Ahmad </li>
+                				<li> Reema Omar </li>                              
+                				<li>Deema Bader</li>
+                	<span class="read-more-text">
+              		  <ul>
+                            <li>Nora Ahmad</li> <!-- Additional names -->
+                            <li>Yara Mohammed</li> <!-- Additional names -->
+                            <li>Sarah Nader</li> <!-- Additional names -->
+                            <li>Hadeel Nader</li> <!-- Additional names -->
+               		 </ul>
+              	  </span>
+           </ul>
+            <span class="read-more-btn"> More</span>
+        </div>
+        
+        
+        
+</div>
+
                 	
 
 
@@ -147,7 +253,34 @@
             </div>
             
     </div>
+    
+    <script>
+  // Function to get the start date of the current week (assuming Sunday is the start of the week)
+  function getStartOfWeek(date) {
+    const day = date.getDay(); // Get the day of the week (0 = Sunday, 1 = Monday, ...)
+    const diff = date.getDate() - day; // Calculate the difference to get to Sunday
+    return new Date(date.setDate(diff));
+  }
+
+  // Get the current date
+  const currentDate = new Date();
+
+  // Get the start date of the current week
+  const startOfWeek = getStartOfWeek(currentDate);
+
+  // Format the startOfWeek date as 'Sunday DD Month YYYY'
+  const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+  const formattedStartDate = startOfWeek.toLocaleDateString('en-US', options);
+
+  // Display the start date of the current week above the lists
+  document.getElementById('currentWeekStartDate').textContent = `Current Week's Start Date: ${formattedStartDate}`;
+</script>
+
+    <script src="script2.js"></script>
+
 	   </main>
+	   
+
   
     <footer>
         <h3>Contact us </h3>
