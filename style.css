@@ -10,6 +10,40 @@
 	
 }
 
+:root
+{
+
+	--primary-color: #f5f5dc;
+	--secondary-color:white;
+	--course-color:#FFFFF0;
+	--font-color:black;
+	--secondary-font-color: #666;
+	--links-color: blue;
+	--border-color: #EDEBCE
+	--box-shadow:0px 0px 10px;
+}
+
+/*.dark-mode    3F3D3D
+{ 4C483A  474C3A     35342E 
+	--primary-color: #333;
+	--secondary-color: #3F3D3D;
+	--course-color:#333;
+	--font-color:white;
+	--secondary-font-color: #666
+}*/
+
+.dark-mode
+{
+	--primary-color: #4C483A;
+	--secondary-color: #35342E;
+	--course-color:#47453D;
+	--font-color:white;
+	--secondary-font-color: #666
+	--links-color: yellow;
+	--border-color: #171615;
+	--box-shadow:0px 0px 10px #46453D;
+}
+
 body, h1, h2, h3, h4, h5, h6, p {
     margin: 0;
     padding: 0;
@@ -17,15 +51,15 @@ body, h1, h2, h3, h4, h5, h6, p {
 
 body {
     background-color: #f0f0f0;
-    color: #333;
+    color: var(--font-color);
     font-family: Arial, sans-serif;
-	  background-color: #f5f5dc;
+	  background-color: var(--primary-color);
 	  
 }
 ul.breadcrumb {
   padding: 10px 16px;
   list-style: none;
-  background-color:white;
+  background-color:var(--secondary-color);
 }
 ul.breadcrumb li {
   display: inline;
@@ -47,7 +81,7 @@ ul.breadcrumb li a:hover {
 
 header {
 	font-family:Garamond;
-    color: black;
+    color: var(--font-color);
     text-align: left;
     padding: 20px;
 }
@@ -71,7 +105,7 @@ header h5 {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    background-color: #fff;
+    background-color: var(--secondary-color);
     padding: 10px;
 	
 }
@@ -81,11 +115,12 @@ header h5 {
     width: 200px;
     padding: 20px;
     margin: 20px;
-    background-color: #fff;
+    background-color:var(--secondary-color);
     border: 1px solid #ddd;
+    border-color: var(--border-color);
     border-radius: 5px;
     text-align: center;
-	  background-color: #FFFFF0;
+	  background-color:var(--course-color);
 }
 
 .course img {
@@ -99,7 +134,7 @@ header h5 {
 
 .course p {
     font-size: 1em;
-    color: #666;
+    color: var(--secondary-font-color);
 }
 
 
@@ -132,8 +167,8 @@ header h5 {
 
 /* Style the footer */
 footer {
-       background-color: #f5f5dc;
-    color:black;
+    background-color: var(--primary-color);
+    color:var(--font-color);
     text-align: center;
     padding: 10px;
 	position:static;
@@ -142,7 +177,7 @@ footer {
 
 
 footer a {
-    color:blue;
+    color:var(--links-color);;
     text-decoration: none;
     font-weight: bold;
 	position:static;
@@ -152,7 +187,7 @@ footer a {
 .nav-list {
     list-style: none;
     padding: 0;
-	  background-color: #f5f5dc;
+	  background-color: var(--primary-color);
 	  
 	
 }
@@ -165,8 +200,9 @@ footer a {
             width: 950px; 
             height: 200px; 
             overflow: scroll; 
-            border: 1px solid #ccc; 
-			background-color:white;
+            border: 1px solid;
+            border-color: var(--border-color);
+			background-color:var(--secondary-color);
 			
         }
 		aside {
@@ -184,7 +220,7 @@ footer a {
 .nav-list{
 	list-style-type: circle;
 	font-size:80%;
-	background:white;
+	background:var(--secondary-color);
 	box-shadow:0px 0px 10px ;
 	margin:2rem;
 	padding:8rem 0;
@@ -236,7 +272,7 @@ footer a {
 
 
 .nav{
-	  background-color:white;
+	  background-color:var(--secondary-color);
     font-weight: bold;
     line-height: 2em;
 	 margin-top: 20px;
@@ -248,47 +284,9 @@ footer a {
 	
 }
 header, aside {
-    background-color: #f5f5dc;
-}
-/* Media Queries for Responsive Design */
-@media only screen and (min-width: 768px) {
-
-    .course {
-        width: 45%;
-    }
-
-    .feedback {
-        width: 45%; 
-    }
-    
-    .scrollable-div  {
-        width: 45%; 
-    }
-     .nav-list  {
-      font-size:60%;
-    }
-    
+    background-color:var(--primary-color);
 }
 
-    
+.course:hover, .course:active {font-size: 110%;}
 
 
-@media only screen and (min-width: 480px) {
-     .course {
-        width: 45%; 
-    }
-
-    .feedback {
-        width: 60%; 
-    }
-    
-    .scrollable-div  {
-        width: 50%; 
-    }
-    
-        .nav-list  {
-      font-size:40%;
-    }
-    
-   
-}
