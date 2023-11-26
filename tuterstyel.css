@@ -1,3 +1,29 @@
+
+
+:root
+{
+
+	--primary-color: #f5f5dc;
+	--secondary-color:white;
+	--course-color:#FFFFF0;
+	--font-color:black;
+	--secondary-font-color: #666;
+	--links-color: #101643;
+	--border-color: #EDEBCE
+}
+
+.dark-mode
+{
+	--primary-color: #4C483A;
+	--secondary-color: #35342E;
+	--course-color:#47453D;
+	--font-color:white;
+	--secondary-font-color: #666
+	--links-color: yellow;
+	--border-color: #171615;
+}
+
+
 .Tuters {
   width: 75%;
   height: 200%;
@@ -9,7 +35,7 @@
     justify-content: center;
     display:inline-block;
     justify-content: center;
-    background-color: #fff;
+    background-color: var(--secondary-color);
     padding: 0%;
     background-position: 100%;
 }
@@ -18,7 +44,7 @@
   display: inline-block;
   width: 35%; /* Optional: Set a specific width for the items */
   height: 200%;
-  background-color:#FFFFF0; 
+  background-color: var(--course-color);
   margin: 1%;
   text-align: center;
   line-height: 350%;
