@@ -1,217 +1,116 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <title>Registration Page</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="RegistrationStyle.css">
-  
-    <style>
-    
-   a:link { color:#101643; text-decoration: underline; }
- a:visited { color:#101643; text-decoration: underline; }
- a:hover { color:#101643; text-decoration: underline; }
- a:active { color:#101643; text-decoration: underline; }
-  </style>
-    
-  </head>
-  
-<body>
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        // Add an array to store names for each form
-        var kidsInfo = {};
 
-        function validateDate() {
-        var inputDate = document.getElementById("birthday").value;
-        var date = new Date(inputDate);
-        var currentDate = new Date();
-        var sixYearsAgo = new Date();
-        sixYearsAgo.setFullYear(currentDate.getFullYear() - 6);
-        return date <= sixYearsAgo;
+:root
+{
+
+	--primary-color: #f5f5dc;
+	--secondary-color:white;
+	--course-color:#FFFFF0;
+	--font-color:black;
+	--secondary-font-color: #666;
+	--links-color: #101643;
+	--border-color: #EDEBCE
+	--box-shadow:0px 0px 10px;
+}
+
+.dark-mode
+{
+	--primary-color: #4C483A;
+	--secondary-color: #35342E;
+	--course-color:#47453D;
+	--secondary-font-color: #666
+	--links-color: yellow;
+	--border-color: #171615;
+	--box-shadow:0px 0px 10px #46453D;
+}
+
+
+ body   {
+            font-family: Arial, sans-serif;
+			
+        }
+
+        form {
+            max-width: 60%;
+            margin-bottom: 4%;
+			margin-left:3%;
+			margin-right:5%;
+            padding: 3%;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+			font-size:1rem;
+            }
+            
+		.box{
+			margin-left:2%;
+	        background-color:var(--secondary-color);
+           height:52em;
+		}
+		
+		.form{
+			margin-top:1%;
+			margin-left:3%;
+			
+		}
+h2{
+	text-align:center;
+	color:green;
+}
+        legend {
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            margin: 2%;
+        }
+
+        label,h4 {
+            font-weight: bold;
+			color:green;
+        }
+
+        input[type="text"],
+        input[type="date"],
+        input[type="email"],
+        input[type="tel"],
+        select {
+            width: 90%;
+            padding: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        input[type="radio"] {
+            margin-right: 10px;
+        }
+
+        input[type="submit"] {
+            background: #8A9A5B;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background: #355E3B;
+        }
+        
+        
+    legend
+    {
+    
+    	color: black;
+    
     }
     
     
-        function validateEmail(email) {
-            // Regular expression for validating an Email
-            var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            return emailRegex.test(email);
-        }
-
-        function validateForm(event) {
-            var formId = event.target.id;
-            var firstName = document.getElementById("firstname").value;
-            var lastName = document.getElementById("lastname").value;
-            var phoneNumber = document.getElementById("phone").value;
-            var birthday = document.getElementById("birthday").value;
-            var email = document.getElementById("email").value;
-            var photoInput = document.getElementById("photo");
-            var genderRadios = document.getElementsByName("gender");
-            var genderRadios = document.getElementsByName("gender");
-    var selectedGender = "";
-    for (var i = 0; i < genderRadios.length; i++) {
-        if (genderRadios[i].checked) {
-            selectedGender = genderRadios[i].value;
-            break;
-        }
-            }
-
-            if (firstName === "" || lastName === "" || phoneNumber === "" || birthday === "" || photoInput.files.length === 0) {
-                alert("Please fill out all fields.");
-                return false;
-            }
-
-            if (!/^[A-Za-z]/.test(firstName)) {
-                alert("First name cannot start with numbers.");
-                return false;
-            }
-
-            if (!/^\d{10}$/.test(phoneNumber)) {
-                alert("Phone number should contain exactly 10 digits.");
-                return false;
-            }
-
-            if (!validateDate()) {
-                alert("DOB should be after 2017 , childern younger than 6 are not accepted.");
-                return false;
-            }
-
-            // Store child's first name in local storage for the specific form
-            if (!kidsInfo[formId]) {
-                kidsInfo[formId] = [];
-            }
-            kidsInfo[formId].push(firstName);
-            localStorage.setItem("kidsInfo", JSON.stringify(kidsInfo));
-
-            // Retrieve the photo file
-            var photoFile = photoInput.files[0];
-
-            // Create a new window with child information
-            var childWindow = window.open("", "ChildInfoWindow", "width=400,height=400");
-
-            // Create the content to be displayed
-            var content = `
-        <html>
-            <head>
-                <title>Child Information</title>
-            </head>
-            <body>
-                <img src="${URL.createObjectURL(photoFile)}" alt="Kid Photo">
-                <p>Child Name: ${firstName} ${lastName}</p>
-                <p>DOB: ${birthday}</p>
-                <p>Gender: ${selectedGender}</p>
-                <p>Email: ${email}</p>
-                <p>Phone Number: ${phoneNumber}</p>
-            </body>
-        </html>
-    `;
-
-            // Write content to the child window
-            childWindow.document.write(content);
-
-            // Close the document to ensure proper rendering
-            childWindow.document.close();
-
-            // Prevent form submission and default action
-            event.preventDefault();
-
-            // Print the child information
-            childWindow.print();
-
-            return false;
-        }
-
-        // Attach 'submit' event handler to the forms
-        var forms = document.querySelectorAll('form');
-        forms.forEach(function(form) {
-            form.addEventListener('submit', validateForm);
-        });
-    });
     
-</script>
-  <header>
-    <div id="logo">
-      <img src="images/logo.png" alt="logo" height="120" width="120">
-    </div>
-    <div id="website-name">
-      <h1>Coding Safari</h1>
-    </div>
-    <h5><q>Empowering young minds <br>through coding adventures</q></h5>
-    <ul class="breadcrumb">
-      <li><a href="Index.html">Home</a></li>
-      <li><a href="ParentDashboard.html">Parent Dashboard</a></li>
-      <li><a href="Registration.html">Registration</a></li>
-    </ul>
-    
- <button id="theme-toggle">Customize</button>
-	        <script src="script.js"></script>
-  </header>
-  <aside>
-    <nav>
-      <ul class="nav-list">
-        <li class="nav-item1"><a href="courses.html" accesskey="c">Current Courses</a></li>
-        <li class="nav-item2"><a href="tutors.html" accesskey="t">Tutors</a></li>
-        <li class="nav-item3"><a href="ParentDashboard.html" accesskey="p">Parent Dashboard</a></li>
-        <li class="nav-item4"><a href="administrators.html" accesskey="a">Administrators Dashboard</a></li>
-      </ul>
-    </nav>
-  </aside>
-  <main>
-    <div class="box">
-      <h2>Register a new kid</h2>
-      <div class="form">
-        <form id="registrationForm" method="post" onsubmit="return validateForm()"> 
-          <fieldset>
-            <legend>Kid Information</legend>
-            <ul style="color: green">
-              <li>
-                <label for="firstname">First name:</label>
-                <input type="text" id="firstname" name="firstname" required>
-              </li>
-              <li>
-                <label for="lastname">Last name:</label>
-                <input type="text" id="lastname" name="lastname" required>
-              </li>
-              <li>
-                <label for="photo">Kid photo:</label>
-                <input type="file" name="photo" id="photo" accept="image/*" required>
-              </li>
-              <li>
-                <label>Gender:</label>
-                <input type="radio" id="male" name="gender" value="Male" required> Male
-                <input type="radio" id="female" name="gender" value="Female" required> Female
-              </li>
-              <li>
-                <label for="birthday">Birthday:</label>
-                <input type="date" id="birthday" name="birthday" required>
-              </li>
-            </ul>
-            <h4>Contact Info:</h4>
-            <ul>
-              <li>
-                <label for="phone">Phone No:</label>
-                <input type="tel" id="phone" name="phone" placeholder="05########" pattern="[0-9]{10}" required>
-              </li>
-              <li>
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
-              </li>
-              <li>
-                <input type="submit" value="Submit">
-              </li>
-            </ul>
-          </fieldset>
-        </form>
-      </div>
-    </div>
-  </main>
-  <footer>
-    <h3>Contact us</h3>
-    <p>Email: <a href="mailto:CodingSafari@gmail.com">CodingSafari@gmail.com</a></p>
-    <p>Phone: 0553892789</p>
-    <p>&copy;2023 CodingSafari, all rights reserved.</p>
-  </footer>
- 
- 
-</body>
-</html>
