@@ -1,10 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
     <title>Home Page</title>
-    <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" media="(prefers-color-scheme: dark)" href="syle/dark.css">
+  
+  <style>
+   a:link { color:#101643; text-decoration: underline; }
+ a:visited { color:#101643; text-decoration: underline; }
+ a:hover { color:#101643; text-decoration: underline; }
+ a:active { color:#101643; text-decoration: underline; }
+  </style>
+    
 </head>
+
 <body>
     <header>
         <div  id="logo">
@@ -15,23 +26,21 @@
 		</div>
 		
         <h5><q>Empowering young minds <br>through coding adventures</q></h5>
-        <div class="theme">
-        <img src="images/moon.png" alt="dark" id="moon">
-        <img src="images/sun.png" alt="light" id="sun">
-    </div>
 		<ul class="breadcrumb">
   <li><a href="Index.html">Home</a></li>
 </ul>
+ <button id="theme-toggle">Customize</button>
+    <script src="script.js"></script>
     </header>
     <aside>
-    	<nav>
-            <ul class="nav-list">
-            <li class="nav-item1"><a href="courses.html" accesskey="c">Current Courses</a></li>
-            <li class="nav-item2"><a href="tutors.html" accesskey="t">Tutors</a></li>
-            <li class="nav-item3"><a href="ParentDashboard.html" accesskey="p">Parent Dashboard</a></li>
-            <li class="nav-item4"><a href="administrators.html" accesskey="a">Administrators Dashboard</a></li>
-            </ul>
-            </nav>
+        <nav>
+	<ul class="nav-list">
+	<li class="nav-item1"><a href="CurrentCourses.html">Current Courses</a></li>
+	<li class="nav-item2"><a href="tutors.html">Tutors</a></li>
+	<li class="nav-item3"><a href="ParentDashboard.html">Parent Dashboard</a></li>
+	<li class="nav-item4"><a href="Admin-page.html">Administrators Dashboard</a></li>
+	</ul>
+	</nav>
     </aside>
     <main>
         <div class="course-container">
@@ -111,12 +120,12 @@
             </div>
         </div>
     </div>
+   <!--  <script src="script.js"></script> -->
     <footer>
         <h3>Contact us </h3>
         <p>Email: <a href="mailto:CodingSafari@gmail.com">CodingSafari@gmail.com</a></p>
         <p>Phone:0553892789</p>
 		<p> &copy;2023 CodingSafari, all rights reserved.</p>
-
     </footer>
 </body>
 </html>
