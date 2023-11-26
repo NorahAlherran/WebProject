@@ -6,6 +6,14 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="RegistrationStyle.css">
   
+    <style>
+    
+   a:link { color:#101643; text-decoration: underline; }
+ a:visited { color:#101643; text-decoration: underline; }
+ a:hover { color:#101643; text-decoration: underline; }
+ a:active { color:#101643; text-decoration: underline; }
+  </style>
+    
   </head>
   
 <body>
@@ -22,6 +30,8 @@
         sixYearsAgo.setFullYear(currentDate.getFullYear() - 6);
         return date <= sixYearsAgo;
     }
+    
+    
         function validateEmail(email) {
             // Regular expression for validating an Email
             var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -117,6 +127,7 @@
             form.addEventListener('submit', validateForm);
         });
     });
+    
 </script>
   <header>
     <div id="logo">
@@ -131,6 +142,9 @@
       <li><a href="ParentDashboard.html">Parent Dashboard</a></li>
       <li><a href="Registration.html">Registration</a></li>
     </ul>
+    
+ <button id="theme-toggle">Customize</button>
+	        <script src="script.js"></script>
   </header>
   <aside>
     <nav>
@@ -149,7 +163,7 @@
         <form id="registrationForm" method="post" onsubmit="return validateForm()"> 
           <fieldset>
             <legend>Kid Information</legend>
-            <ul>
+            <ul style="color: green">
               <li>
                 <label for="firstname">First name:</label>
                 <input type="text" id="firstname" name="firstname" required>
