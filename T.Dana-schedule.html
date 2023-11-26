@@ -5,7 +5,14 @@
     <title>T.Dana Schedule</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="schedule-style.css">
-    
+   
+       <style>
+        
+ a:link { color:#101643; text-decoration: underline; }
+ a:visited { color:#101643; text-decoration: underline; }
+ a:hover { color:#101643; text-decoration: underline; }
+ a:active { color:#101643; text-decoration: underline; }
+    </style> 
 </head>
 <body>
     <header>
@@ -17,11 +24,15 @@
 		</div>
 		
         <h5><q>Empowering young minds <br>through coding adventures</q></h5>
-        <nav class="nav">
-            <a href="index.html">Home Page &gt </a>
-            <a href="Admin-page.html">Administrators Dashboard &gt </a>
-            <a href="schedule.html">Schedule Page</a>
-        </nav>
+		<ul class="breadcrumb">
+           <li> <a href="index.html">Home Page</a> </li>
+           <li> <a href="Admin-page.html">Administrators Dashboard</a> </li>
+           <li> <a href="schedule.html">Schedule Page</a> </li>
+        </ul>
+        
+ <button id="theme-toggle">Customize</button>
+	        <script src="script.js"></script>
+	        
     </header>
     <aside>
         <nav>
@@ -65,7 +76,7 @@
   </tr>
   <tr class="tr-stl">
     <th> 4:00 - 5:00 </th>
-    <td class="NA"> </td>
+    <td> Scratch Programming </td>
     <td class="NA"> </td>
     <td class="NA"> </td>
     
@@ -81,7 +92,7 @@
 
   <tr class="tr-stl">
     <th> 6:00 - 7:00 </th>
-    <td class="NA"> </td>
+    <td> Scratch Programming </td>
     <td> HTML programming </td>
     <td class="NA"> </td>
     <td> HTML programming </td>
