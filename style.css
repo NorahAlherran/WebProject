@@ -20,17 +20,7 @@
 	--secondary-font-color: #666;
 	--links-color: blue;
 	--border-color: #EDEBCE
-	--box-shadow:0px 0px 10px;
 }
-
-/*.dark-mode    3F3D3D
-{ 4C483A  474C3A     35342E 
-	--primary-color: #333;
-	--secondary-color: #3F3D3D;
-	--course-color:#333;
-	--font-color:white;
-	--secondary-font-color: #666
-}*/
 
 .dark-mode
 {
@@ -41,7 +31,6 @@
 	--secondary-font-color: #666
 	--links-color: yellow;
 	--border-color: #171615;
-	--box-shadow:0px 0px 10px #46453D;
 }
 
 body, h1, h2, h3, h4, h5, h6, p {
